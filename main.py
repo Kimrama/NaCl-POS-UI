@@ -14,7 +14,11 @@ class MainWindow(QMainWindow):
 
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 
+        # when using in rasPi4
+        # window.showFullScreen()   
+
         self.setFixedSize(QSize(600, 1024))
+
 
         self.stack = QStackedWidget()
         self.setCentralWidget(self.stack)
