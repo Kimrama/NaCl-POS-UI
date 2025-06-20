@@ -5,6 +5,7 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedWidget, QPushButton, QHBoxLayout, QVBoxLayout
 
 from ui.default_page import DefaultPage
+from ui.list_page import ListPage
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -25,9 +26,11 @@ class MainWindow(QMainWindow):
 
         # page
         self.default_page = DefaultPage(self)
+        self.list_page = ListPage(self)
 
         # add page to stack
         self.stack.addWidget(self.default_page)
+        self.stack.addWidget(self.list_page)
 
 
 
@@ -37,7 +40,7 @@ class MainWindow(QMainWindow):
         self.stack.setCurrentWidget(self.default_page)
 
     def goto_list(self):
-        print("go to list")
+        self.stack.setCurrentWidget(self.list_page)
 
 if __name__ == "__main__":
     app = QApplication([])
