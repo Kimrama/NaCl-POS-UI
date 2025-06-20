@@ -53,7 +53,7 @@ class ListPage(QWidget):
         # === White Container ===
         white_container = QFrame()
         white_container.setFixedSize(550, 710)
-        white_container.setStyleSheet("background-color: white; border-radius: 16px;")
+        white_container.setStyleSheet("background-color: white; border-radius: 16px; ")
         white_container_layout = QVBoxLayout()
         white_container_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
 
@@ -107,7 +107,9 @@ class ListPage(QWidget):
 
         # Add to container
         white_container_layout.addLayout(header_layout)
+        white_container_layout.addSpacing(18)
         white_container_layout.addLayout(col_header_layout)
+        white_container_layout.addSpacing(18)
         white_container_layout.addWidget(self.no_product_label)
         white_container_layout.addLayout(self.product_list_layout)
         white_container_layout.addStretch()
@@ -153,6 +155,7 @@ class ListPage(QWidget):
         main_layout.addLayout(top_layout)
         main_layout.addLayout(center_layout)
         main_layout.addLayout(btn_layout)
+        main_layout.addSpacing(18)
         self.setLayout(main_layout)
 
     # ------------------------------
@@ -220,12 +223,12 @@ class ListPage(QWidget):
         minus_btn = QPushButton("-")
         minus_btn.setFixedSize(30, 30)
         minus_btn.setStyleSheet(
-            "font-size: 16px; text-align: center; background-color: #EF5350; color: white; border-radius: 15px;")
+            "font-size: 16px; text-align: center; background-color: #F93244; color: white; border-radius: 15px;")
 
         plus_btn = QPushButton("+")
         plus_btn.setFixedSize(30, 30)
         plus_btn.setStyleSheet(
-            "font-size: 16px; text-align: center; background-color: #4CAF50; color: white; border-radius: 15px;")
+            "font-size: 16px; text-align: center; background-color: #27AE61; color: white; border-radius: 15px;")
 
         qty_label = QLabel(str(qty))
         qty_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
