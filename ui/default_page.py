@@ -61,6 +61,8 @@ class DefaultPage(QWidget):
 
         self.fade_anim.start()
 
+    
+    # not sure this will work with touchscreen
     def mousePressEvent(self, event):
         if event.button() == Qt.MouseButton.LeftButton:
             self.main_window.goto_list()
