@@ -42,6 +42,12 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(self.list_page)
         self.stack.setCurrentWidget(self.list_page)
 
+    def goto_qrcode(self, total_price: float):
+        from ui.qrcode_page import QRCodePage
+        self.qrcode_page = QRCodePage(self, total_price)
+        self.stack.addWidget(self.qrcode_page)
+        self.stack.setCurrentWidget(self.qrcode_page)
+
 if __name__ == "__main__":
     app = QApplication([])
     window = MainWindow()

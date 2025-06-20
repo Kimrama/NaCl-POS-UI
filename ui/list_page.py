@@ -135,6 +135,7 @@ class ListPage(QWidget):
             border-radius: 24px;
             color: white;
         """)
+        pay_btn.clicked.connect(self.handle_pay)
 
         btn_layout = QHBoxLayout()
         btn_layout.addSpacing(8)
@@ -275,3 +276,7 @@ class ListPage(QWidget):
             del self.products[index] 
 
         self.update_product_list()
+
+    def handle_pay(self):
+        total = sum(p["qty"] * p["price"] for p in self.products)
+        self.main_window.goto_qrcode(total)
