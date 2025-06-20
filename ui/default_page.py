@@ -53,11 +53,11 @@ class DefaultPage(QWidget):
 
         # animation opacity 1.0 → 0.2 → 1.0
         self.fade_anim = QPropertyAnimation(opacity_effect, b"opacity")
-        self.fade_anim.setDuration(1000)  # 1 sec/round
+        self.fade_anim.setDuration(1000) 
         self.fade_anim.setStartValue(1.0)
         self.fade_anim.setEndValue(0.2)
         self.fade_anim.setEasingCurve(QEasingCurve.Type.InOutQuad)
-        self.fade_anim.setLoopCount(-1)  # infinity
+        self.fade_anim.setLoopCount(-1) 
 
         self.fade_anim.start()
 

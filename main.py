@@ -26,11 +26,9 @@ class MainWindow(QMainWindow):
 
         # page
         self.default_page = DefaultPage(self)
-        self.list_page = ListPage(self)
 
         # add page to stack
         self.stack.addWidget(self.default_page)
-        self.stack.addWidget(self.list_page)
 
 
 
@@ -40,6 +38,8 @@ class MainWindow(QMainWindow):
         self.stack.setCurrentWidget(self.default_page)
 
     def goto_list(self):
+        self.list_page = ListPage(self)
+        self.stack.addWidget(self.list_page)
         self.stack.setCurrentWidget(self.list_page)
 
 if __name__ == "__main__":
