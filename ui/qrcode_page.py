@@ -87,6 +87,7 @@ class QRCodePage(QWidget):
         confirm_payment_btn.setFixedWidth(500)
         confirm_payment_btn.setFixedHeight(70)
         confirm_payment_btn.setStyleSheet("font-size: 24px; background-color: #27AE61; border-radius: 16px;")
+        confirm_payment_btn.clicked.connect(self.main_window.goto_complete)
 
         cancel_btn = QPushButton("Cancel")
         cancel_btn.setFixedWidth(500)
