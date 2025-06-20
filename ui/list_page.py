@@ -282,4 +282,5 @@ class ListPage(QWidget):
 
     def handle_pay(self):
         total = sum(p["qty"] * p["price"] for p in self.products)
+        self.timer.stop()
         self.main_window.goto_qrcode(total)
